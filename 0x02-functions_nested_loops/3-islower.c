@@ -1,22 +1,15 @@
-#include <stdio.h>
-/**
-  * main - A program that print the sum even fibonacci numbers under 4 million
-  * Return: Nothing.
-  */
-int main(void)
-{
-	unsigned long fibonacci, num1, num2, num3, total;
+#include "main.h"
 
-	num1 = total = 0;
-	num2 = 1;
-	for (fibonacci = 0; fibonacci < 50; fibonacci++)
-	{
-		num3 = num1 + num2;
-		num1 = num2;
-		num2 = num3;
-		if (num3 % 2 == 0 && num3 < 4000000)
-		total += num3;
-	}
-	printf("%lu\n", total);
-	return (0);
-}
+/**
+ * _islower - This function checks for lowercase character
+ *@c: the characters to be check
+ * Return: 1 for lowercase, 0 otherwise
+ */
+int _islower(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else
+		return (0);
+
+}}

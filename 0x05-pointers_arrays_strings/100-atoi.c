@@ -1,40 +1,25 @@
 #include "main.h"
-
 /**
- * _atoi - converts a string to an integer
- * The no in the string can be preceded by an infinite no of characters.
- * Take into account the '-' and '+' signs.
- * @s: pointer to the input string
- * Return: converted integer value
- */
+ * _atoi - changes a string into an integer
+ *
+ * @s: the string input parameter
+ *
+ * Return: change integer from string
+*/
 int _atoi(char *s)
 {
+	unsigned int num = 0;
 	int sign = 1;
-	int result = 0;
-	int i = 0;
 
-	if (s[0] == '-')
+	for (; *s != '\0'; s++)
 	{
-		sign = -1;
-		i++;
-	}
-	else if (s[0] == '+')
-	{
-		i++;
-	}
-
-	while (s[i] != '\0')
-	{
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			result = result * 10 + (s[i] - '0');
-		}
-		else
-		{
+		if (*s == '-')
+			sign *= -1;
+		else if (*s >= '0' && *s <= '9')
+			num = (num * 10) + (*s - '0');
+		else if (num > 0)
 			break;
-		}
-		i++;
 	}
-	result *= sign;
-		return (result);
+
+	return (num * sign);
 }

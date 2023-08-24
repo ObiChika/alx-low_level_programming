@@ -1,7 +1,0 @@
-# C Bit Manipulation
-&&
-~
-|
->>
-<<
-^
